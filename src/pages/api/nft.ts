@@ -14,6 +14,7 @@ const NFT_ADDRESSES = [
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const { address } = req.query
   try {
+    if (!address) res.status(200).json([])
     // console.log('address', address)
     const contractAddresses = NFT_ADDRESSES.map((nftAddress) => `&contractAddresses[]=${nftAddress}`).join('')
     // console.log(contractAddresses)
@@ -21,7 +22,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const result = await fetch(url)
     const json = await result.json()
     // console.log(json)
-    const nftCollected: string[] = json.ownedNfts.map((nft: any) => nft.contract.address)
+    const nftCollected: string[] = json.ownedNfts?.map((nft: any) => nft.contract.address)
     // const uniqueNftCollected: string[] = [...new Set(nftCollected)]
     const uniqueNftCollected = nftCollected.filter((value, index, self) => self.indexOf(value) === index)
     console.log(uniqueNftCollected)

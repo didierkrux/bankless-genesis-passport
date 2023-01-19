@@ -15,7 +15,7 @@ export function Footer(props: Props) {
     <Flex as="footer" className={className} flexDirection="column" justifyContent="center" alignItems="center" my={8}>
       {/* <Text>{SITE_DESCRIPTION}</Text> */}
 
-      <Flex color="gray.500" gap={2} alignItems="center" mt={2}>
+      <Flex color="gray.500" gap={4} alignItems="center" mt={4}>
         <LinkComponent href={`https://github.com/${SOCIAL_GITHUB}`}>
           <FaGithub size={30} />
         </LinkComponent>
