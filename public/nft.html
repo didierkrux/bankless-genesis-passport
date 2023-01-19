@@ -203,30 +203,31 @@
     }
     const [, param] = window.location.href.split('?')
     // console.log(param)
-    $.get(`/api/nft?${param}`, function (data) {
-      // console.log(data)
-      const selector = data.map(nft => `.nft-${nft}`).join(',')
-      // console.log(selector)
-      $(selector).addClass('owned')
-      if (data.length === 5)
-        $('.bankless-power').addClass('owned')
-      $('.owned').confettiButton({ hoverOnly: true, colorArray: ['#ffc107'] })
-      $(".owned").click(function (e) {
-        const nft = $(this).attr('nft')
-        // console.log(nft)
-        if (nft) {
-          const image = NFT_DETAILS[nft].image
-          const sound = NFT_DETAILS[nft].sound
-          $('.episode').html(`<img src="${image}" /><audio autoplay controls controlslist="nodownload" loop src="${sound}"></audio><div class="close">${closeSVG}</div>`).show()
-        } else {
-          $("img.background").addClass('shake')
-          setTimeout(() => {
-            $("img.background").removeClass('shake')
-          }, "1000")
-        }
-        $(".close").click(function () { $('.episode').html('').hide() })
+    if (param)
+      $.get(`/api/nft?${param}`, function (data) {
+        // console.log(data)
+        const selector = data.map(nft => `.nft-${nft}`).join(',')
+        // console.log(selector)
+        $(selector).addClass('owned')
+        if (data.length === 5)
+          $('.bankless-power').addClass('owned')
+        $('.owned').confettiButton({ hoverOnly: true, colorArray: ['#ffc107'] })
+        $(".owned").click(function (e) {
+          const nft = $(this).attr('nft')
+          // console.log(nft)
+          if (nft) {
+            const image = NFT_DETAILS[nft].image
+            const sound = NFT_DETAILS[nft].sound
+            $('.episode').html(`<img src="${image}" /><audio autoplay controls controlslist="nodownload" loop src="${sound}"></audio><div class="close">${closeSVG}</div>`).show()
+          } else {
+            $("img.background").addClass('shake')
+            setTimeout(() => {
+              $("img.background").removeClass('shake')
+            }, "1000")
+          }
+          $(".close").click(function () { $('.episode').html('').hide() })
+        })
       })
-    })
   </script>
 </body>
 
