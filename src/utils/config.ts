@@ -11,7 +11,7 @@ export const THEME_CONFIG = {
   initialColorMode: THEME_INITIAL_COLOR,
 }
 
-export const SOCIAL_TWITTER = 'BanklessHQ'
+export const SOCIAL_TWITTER = 'didierkrux'
 export const SOCIAL_GITHUB = 'didierkrux/bankless-genesis-passport'
 
 export const ETH_CHAINS = [mainnet, goerli, sepolia, polygon, optimism, arbitrum]

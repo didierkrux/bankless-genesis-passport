@@ -19,7 +19,7 @@ export function Layout(props: Props) {
         <NetworkStatus />
       </Box> */}
 
-      {/* <Footer /> */}
+      <Footer />
     </Box>
   )
 }
