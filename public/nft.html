@@ -1,0 +1,233 @@
+<html>
+
+<head>
+  <style>
+    body {
+      margin: 0;
+      background-color: #2d3748;
+    }
+
+    .nfts,
+    .bankless-power,
+    img {
+      position: absolute;
+    }
+
+    .nfts {
+      width: 100%;
+      height: 100%;
+    }
+
+    .nfts>div {
+      width: 42px;
+      height: 42px;
+      position: absolute;
+      background-color: black;
+      border-radius: 50%;
+    }
+
+    .nft-0xe60a7e1a1ee79832f8f8042b0cffb2eaddb5e6c0 {
+      top: 264px;
+      left: 219px;
+    }
+
+    .nft-0x1041f479b21f9ba7c8a487877b61098842f1f25a {
+      top: 230px;
+      left: 246px;
+    }
+
+    .nft-0xbf6cb74f15655865542668512b55668c35d7fc94 {
+      top: 184px;
+      left: 286px;
+    }
+
+    .nft-0xd19a5ee68e2ed7c19d509b6f4ecad7409e79ad58 {
+      top: 164px;
+      left: 321px;
+    }
+
+    .nft-0xbfb33f1e522f9c02633f16bacf3f4f24dc4b8755 {
+      top: 199px;
+      left: 435px;
+    }
+
+    .bankless-power {
+      background-color: black;
+      border-radius: 50%;
+      top: 255px;
+      left: 310px;
+      width: 54px;
+      height: 54px;
+    }
+
+    .nfts>div.owned,
+    .owned {
+      background: transparent;
+      z-index: 2;
+      cursor: pointer !important;
+    }
+
+    .episode {
+      position: absolute;
+      z-index: 3;
+      width: 500px;
+      height: 500px;
+      display: none;
+    }
+
+    .episode img {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+    }
+
+    audio {
+      width: 494px;
+      height: 47px;
+      position: absolute;
+      top: 450px;
+      left: 3px;
+    }
+
+    .close {
+      cursor: pointer;
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      top: 10px;
+      right: 10px;
+      padding: 3px;
+    }
+
+    img.background.shake {
+      /* Start the shake animation and make the animation last for 0.5 seconds */
+      animation: shake 0.5s;
+
+      /* When the animation is finished, start again */
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes shake {
+      0% {
+        transform: translate(1px, 1px) rotate(0deg);
+      }
+
+      10% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+      }
+
+      20% {
+        transform: translate(-3px, 0px) rotate(1deg);
+      }
+
+      30% {
+        transform: translate(3px, 2px) rotate(0deg);
+      }
+
+      40% {
+        transform: translate(1px, -1px) rotate(1deg);
+      }
+
+      50% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+      }
+
+      60% {
+        transform: translate(-3px, 1px) rotate(0deg);
+      }
+
+      70% {
+        transform: translate(3px, 1px) rotate(-1deg);
+      }
+
+      80% {
+        transform: translate(-1px, -1px) rotate(1deg);
+      }
+
+      90% {
+        transform: translate(1px, 2px) rotate(0deg);
+      }
+
+      100% {
+        transform: translate(1px, -2px) rotate(-1deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <img class="background" src="/nft-background.png">
+  <div class="nfts">
+    <div class="nft-0xe60a7e1a1ee79832f8f8042b0cffb2eaddb5e6c0" nft="0xe60a7e1a1ee79832f8f8042b0cffb2eaddb5e6c0"></div>
+    <div class="nft-0x1041f479b21f9ba7c8a487877b61098842f1f25a" nft="0x1041f479b21f9ba7c8a487877b61098842f1f25a"></div>
+    <div class="nft-0xbf6cb74f15655865542668512b55668c35d7fc94" nft="0xbf6cb74f15655865542668512b55668c35d7fc94"></div>
+    <div class="nft-0xd19a5ee68e2ed7c19d509b6f4ecad7409e79ad58" nft="0xd19a5ee68e2ed7c19d509b6f4ecad7409e79ad58"></div>
+    <div class="nft-0xbfb33f1e522f9c02633f16bacf3f4f24dc4b8755" nft="0xbfb33f1e522f9c02633f16bacf3f4f24dc4b8755"></div>
+  </div>
+  <div class="episode"></div>
+  <div class="bankless-power"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/jquery.vnm.confettiButton.min.js"></script>
+  <link rel="stylesheet" href="/jquery.vnm.confettiButton.css" type="text/css" media="screen" />
+  <script>
+    const closeSVG = '<svg viewBox="0 0 24 24" focusable="false" class="chakra-icon css-onkibi" aria-hidden="true"><path fill="#fff" d="M.439,21.44a1.5,1.5,0,0,0,2.122,2.121L11.823,14.3a.25.25,0,0,1,.354,0l9.262,9.263a1.5,1.5,0,1,0,2.122-2.121L14.3,12.177a.25.25,0,0,1,0-.354l9.263-9.262A1.5,1.5,0,0,0,21.439.44L12.177,9.7a.25.25,0,0,1-.354,0L2.561.44A1.5,1.5,0,0,0,.439,2.561L9.7,11.823a.25.25,0,0,1,0,.354Z"></path></svg>'
+    const NFT_DETAILS = {
+      '0xe60a7e1a1ee79832f8f8042b0cffb2eaddb5e6c0': {
+        title: 'The SBF vs. Erik Voorhees Debate',
+        image:
+          'https://i.seadn.io/gae/GMF2qCCNFTIB6-01I61Ri13ujsA_yqoqDYY5hAR1SAT125qqFho8Op8B6wSiHl87E-qHmsITcS-eNZB_gvmmTwHswvS4BMyhiQ_1?auto=format&w=1000',
+        sound: 'https://openseauserdata.com/files/cc0e011375d4f1fe4f911965f6f6760c.mp3'
+      },
+      '0x1041f479b21f9ba7c8a487877b61098842f1f25a': {
+        title: 'The Crypto Renaissance',
+        image:
+          'https://i.seadn.io/gae/5WbtceYedSIbdGxrJOhHYL0AE1fKArBQhxd-SVZ-1-WY4qMty83ZNH6oMdDs1hBLh0OYNEIk0EEhSmspE7085scKi844feAzo62hYw?auto=format&w=1000',
+        sound: 'https://openseauserdata.com/files/9f6b42bebffdc92cdebe0d1033d9f4fd.mp3'
+      },
+      '0xbf6cb74f15655865542668512b55668c35d7fc94': {
+        title: 'The Ownership Economy',
+        image:
+          'https://i.seadn.io/gae/wPc9LXKQDeEY8kcJIOqm6hi8G5uLRkbZjlvpHcr9hicY-MC25bjej6JWe1_AhsxZGK1GAu8pWJW6PKW5MLKMzKJrkeLOjD28_1hs5Q?auto=format&w=1000',
+        sound: 'https://openseauserdata.com/files/9d505f8bb006f9981d5aa5f34839c4bd.mp3'
+      },
+      '0xd19a5ee68e2ed7c19d509b6f4ecad7409e79ad58': {
+        title: 'Ultra Sound Money',
+        image: 'https://i.seadn.io/gcs/files/66c3ff8ce913e3f514ed3babfdeb3ba2.gif?auto=format&w=1000',
+        sound: 'https://openseauserdata.com/files/ee91930da435371c13c735cc2356c64e.mp3'
+      },
+      '0xbfb33f1e522f9c02633f16bacf3f4f24dc4b8755': {
+        title: 'Endgame',
+        image: 'https://i.seadn.io/gcs/files/d6af0289eb30df99428aae53aa4a58d4.gif?auto=format&w=1000',
+        sound: 'https://openseauserdata.com/files/0cd5d63f4ed46c218e42886dc5c2371a.mp3'
+      },
+    }
+    const [, param] = window.location.href.split('?')
+    // console.log(param)
+    $.get(`/api/nft?${param}`, function (data) {
+      // console.log(data)
+      const selector = data.map(nft => `.nft-${nft}`).join(',')
+      // console.log(selector)
+      $(selector).addClass('owned')
+      if (data.length === 5)
+        $('.bankless-power').addClass('owned')
+      $('.owned').confettiButton({ hoverOnly: true, colorArray: ['#ffc107'] })
+      $(".owned").click(function (e) {
+        const nft = $(this).attr('nft')
+        // console.log(nft)
+        if (nft) {
+          const image = NFT_DETAILS[nft].image
+          const sound = NFT_DETAILS[nft].sound
+          $('.episode').html(`<img src="${image}" /><audio autoplay controls controlslist="nodownload" loop src="${sound}"></audio><div class="close">${closeSVG}</div>`).show()
+        } else {
+          $("img.background").addClass('shake')
+          setTimeout(() => {
+            $("img.background").removeClass('shake')
+          }, "1000")
+        }
+        $(".close").click(function () { $('.episode').html('').hide() })
+      })
+    })
+  </script>
+</body>
+
+</html>

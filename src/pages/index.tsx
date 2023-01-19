@@ -1,22 +1,18 @@
-import { Heading, ListItem, UnorderedList } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
 import { Head } from 'components/layout/Head'
-import { LinkComponent } from 'components/layout/LinkComponent'
+import { useAccount } from 'wagmi'
 
 export default function Home() {
+  const { address } = useAccount()
+
   return (
     <>
       <Head />
 
       <main>
-        <Heading as="h2">Nexth Examples</Heading>
-        <UnorderedList>
-          <ListItem>
-            <LinkComponent href="/examples/sign">Sign & verify messages</LinkComponent>
-          </ListItem>
-          <ListItem>
-            <LinkComponent href="/examples/siwe">Sign-in With Ethereum</LinkComponent>
-          </ListItem>
-        </UnorderedList>
+        <Box w="500px" h="500px" m="auto" background="grey">
+          <iframe src={`/nft.html${address ? `?address=${address}` : ''}`} width="500px" height="500px" />
+        </Box>
       </main>
     </>
   )
