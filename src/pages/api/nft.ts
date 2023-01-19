@@ -1,5 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
+// TODO: move in .env
 const ALCHEMY_KEY = 'OqVebafskIMfxHaVJNBdms7AmlzRaQ9X'
 
 const NFT_ADDRESSES = [
