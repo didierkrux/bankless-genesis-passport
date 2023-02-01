@@ -23,8 +23,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const json = await result.json()
     // console.log(json)
     const nftCollected: string[] = json.ownedNfts?.map((nft: any) => nft.contract.address)
-    // const uniqueNftCollected: string[] = [...new Set(nftCollected)]
-    const uniqueNftCollected = nftCollected.filter((value, index, self) => self.indexOf(value) === index)
+    const uniqueNftCollected: string[] = [...new Set(nftCollected)]
     console.log(uniqueNftCollected)
     res.status(200).json(uniqueNftCollected)
   } catch (ex) {
