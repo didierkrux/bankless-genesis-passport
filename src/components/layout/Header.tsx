@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, useColorModeValue, Spacer, Heading } from '@chakra-ui/react'
+import { Flex, useColorModeValue, Spacer, Heading, Button } from '@chakra-ui/react'
 import { SITE_NAME } from 'utils/config'
 import { LinkComponent } from './LinkComponent'
 import { ThemeSwitcher } from './ThemeSwitcher'
@@ -23,6 +23,9 @@ export function Header(props: Props) {
       <Spacer />
 
       <Flex alignItems="center" gap={4}>
+        <LinkComponent href="/mintlist">
+          <Button>Mintlist</Button>
+        </LinkComponent>
         <ConnectKitButton />
         <ThemeSwitcher />
       </Flex>
