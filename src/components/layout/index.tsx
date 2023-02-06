@@ -13,7 +13,7 @@ export function Layout(props: Props) {
     <Box margin="0 auto" minH="100vh">
       <Header />
 
-      <Container maxW="container.lg" p="0">
+      <Container maxW="1200px" p="0">
         {props.children}
       </Container>
 
