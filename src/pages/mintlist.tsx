@@ -71,7 +71,7 @@ export default function Home() {
         <SimpleGrid minChildWidth="500px" columns={2} spacing={4}>
           <Box justifySelf="center" w="100%" p="4">
             <Text align="center" fontSize="xl" mb="2">
-              NFTs (ERC-721 on Mainnet)
+              NFTs (ERC-721 & ERC-1155 on Mainnet & Polygon)
             </Text>
             <Textarea w="100%" h="600px" value={nfts?.join('\n')} onChange={handleInputChange}></Textarea>
           </Box>
